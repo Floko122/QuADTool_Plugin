@@ -57,6 +57,7 @@ public class ToolConnectionAction extends AnAction {
             background.shutdown();
         }
     }
+
     static void checkExecution(){
         //1: check if java is directly available
         if(existsCommand("where java")||existsCommand("which java")){
@@ -94,7 +95,15 @@ public class ToolConnectionAction extends AnAction {
                 } catch (InterruptedException e) {
                 }
             }
-            return !output.isEmpty()&&new File(output.trim()).exists();
+            //Handle two lined answers
+            if(output.isEmpty()){
+                return false;
+            }
+            if(new File(output.trim()).exists()){
+                return true;
+            }
+            String[] lines=output.split("\n");
+            return lines.length>0&&new File(lines[0].trim()).exists();
         } catch (IOException e) {
             return false;
         }
@@ -187,5 +196,4 @@ public class ToolConnectionAction extends AnAction {
                 break;
         }
     }
-
 }

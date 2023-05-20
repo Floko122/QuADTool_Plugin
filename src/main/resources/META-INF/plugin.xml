@@ -5,8 +5,7 @@
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>QuADTool_Plugin</name>
-    <!--TODO Add correct url-->
+    <name>QuADTool</name>
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor email="florian.dorfhuber@in.tum.de" url="https://www.model.in.tum.de/~kraemerj/upload/">PROSEC Project</vendor>
 
